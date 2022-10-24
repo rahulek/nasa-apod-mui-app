@@ -16,7 +16,7 @@ const DateSelection = ({ onDateSelected }) => {
   };
 
   return (
-    <Paper elevation={3} sx={{ m: 4 }}>
+    <Paper elevation={3} sx={{ m: 2 }}>
       <Stack
         direction="row"
         spacing={2}
@@ -24,7 +24,16 @@ const DateSelection = ({ onDateSelected }) => {
       >
         <Typography variant="h6">Pick a Date: </Typography>
         {/* For simplicity, we're not using the MUI DatePicker */}
-        <input type="date" value={date} onChange={datePicked} />
+        <input
+          type="date"
+          value={date}
+          onChange={datePicked}
+          style={{
+            borderRadius: "5px",
+            padding: "10px",
+            fontSize: "large",
+          }}
+        />
       </Stack>
     </Paper>
   );
