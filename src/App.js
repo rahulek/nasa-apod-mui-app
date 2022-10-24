@@ -1,10 +1,10 @@
 import "./App.css";
-import MUITestComponent from "./MUITestComponent";
+import APODExplorer from "./components/APOExplorer";
 
 function App() {
   return (
     <div className="App">
-      <MUITestComponent />
+      <APODExplorer />
     </div>
   );
 }
