@@ -23,18 +23,33 @@ const APODCard = ({ cardData }) => {
   //JSX for the card
   return (
     <React.Fragment>
-      {/* Image and related data */}
+      {/* Image OR Video and related data */}
       <Paper elevation={3}>
         <Stack direction="column">
-          <a href={cardData.url}>
-            <img
+          {/* A Video */}
+          {cardData.media_type !== "video" && (
+            <a href={cardData.url} target="_blank" rel="noreferrer">
+              <img
+                src={cardData.url}
+                alt={cardData.title}
+                height={400}
+                width={"100%"}
+                style={{ padding: 0 }}
+              ></img>
+            </a>
+          )}
+          {/* An Image */}
+          {cardData.media_type === "video" && (
+            <iframe
               src={cardData.url}
-              alt={cardData.title}
               height={400}
               width={"100%"}
-              style={{ padding: 0 }}
-            ></img>
-          </a>
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="video"
+            ></iframe>
+          )}
           <Box
             sx={{
               textAlign: "center",
