@@ -16,7 +16,7 @@ const DateSelection = ({ onDateSelected }) => {
   };
 
   return (
-    <Paper elevation={3} sx={{ m: 2 }}>
+    <Paper elevation={3} sx={{ m: 1 }}>
       <Stack
         direction="row"
         spacing={2}
